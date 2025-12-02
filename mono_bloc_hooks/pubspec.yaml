@@ -1,0 +1,28 @@
+name: mono_bloc_hooks
+description: Flutter hooks for MonoBloc - easily handle actions and state in HookWidget components
+
+repository: https://github.com/westito/mono_bloc
+
+topics:
+  - "bloc"
+  - "flutter"
+  - "hooks"
+  - "state-management"
+
+version: 1.0.7
+
+environment:
+  sdk: ^3.9.0
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_hooks: ^0.21.0
+  hooked_bloc: ^1.7.0
+  mono_bloc_flutter: ^1.0.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.0

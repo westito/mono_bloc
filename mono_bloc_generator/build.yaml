@@ -1,0 +1,21 @@
+builders:
+  mono_bloc_generator:
+    target: "mono_bloc_generator"
+    import: "package:mono_bloc_generator/mono_bloc_generator.dart"
+    builder_factories: ["monoBlocGenerator"]
+    build_extensions: { ".dart": [".g.part"] }
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen:combining_builder"]
+
+targets:
+  $default:
+    sources:
+      - "$package$"
+      - "lib/**"
+      - "test/**"
+    builders:
+      mono_bloc_generator:mono_bloc_generator:
+        enabled: true
+        generate_for:
+          - "test/**"

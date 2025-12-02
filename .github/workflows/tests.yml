@@ -1,0 +1,65 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, reopened, review_requested, synchronize]
+
+jobs:
+  test:
+    name: "Tests"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      
+      - name: Install dependencies for all packages
+        run: |
+          echo "Installing dependencies for mono_bloc..."
+          cd mono_bloc && dart pub get && cd ..
+          echo "Installing dependencies for mono_bloc_generator..."
+          cd mono_bloc_generator && dart pub get && cd ..
+          echo "Installing dependencies for mono_bloc_flutter..."
+          cd mono_bloc_flutter && dart pub get && cd ..
+          echo "Installing dependencies for mono_bloc_hooks..."
+          cd mono_bloc_hooks && dart pub get && cd ..
+          echo "Installing dependencies for example..."
+          cd example && flutter pub get && cd ..
+      
+      - name: Verify formatting
+        run: dart format --set-exit-if-changed -o none .
+      
+      - name: Analyze mono_bloc
+        run: cd mono_bloc && dart analyze | grep error || true
+      
+      - name: Analyze mono_bloc_generator
+        run: cd mono_bloc_generator && dart analyze | grep error || true
+      
+      - name: Analyze mono_bloc_flutter
+        run: cd mono_bloc_flutter && dart analyze | grep error || true
+      
+      - name: Analyze mono_bloc_hooks
+        run: cd mono_bloc_hooks && dart analyze | grep error || true
+      
+      - name: Analyze example
+        run: cd example && flutter analyze | grep error || true
+      
+      - name: Generate code for mono_bloc_generator tests
+        run: cd mono_bloc_generator && dart run build_runner build --delete-conflicting-outputs
+      
+      - name: Generate code for example app
+        run: cd example && dart run build_runner build --delete-conflicting-outputs
+      
+      - name: Run mono_bloc_generator tests
+        run: cd mono_bloc_generator && dart test --reporter=expanded
+      
+      - name: Run example app tests
+        run: cd example && flutter test --reporter=expanded

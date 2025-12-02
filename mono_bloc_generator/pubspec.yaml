@@ -1,0 +1,34 @@
+name: mono_bloc_generator
+description: Code generator for mono_bloc. Generates event classes, action handlers, and base bloc classes from annotated methods.
+
+repository: https://github.com/westito/mono_bloc
+
+topics:
+  - "bloc"
+  - "code-generation"
+  - "state-management"
+  - "dart"
+
+version: 1.0.7
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  analyzer: ">=8.4.0 <10.0.0"
+  build: ^4.0.0
+  change_case: ^2.2.0
+  code_builder: ^4.11.0
+  dart_style: ^3.1.0
+  source_gen: ^4.0.0
+  yaml: ^3.1.0
+
+dev_dependencies:
+  bloc: ^9.0.0
+  bloc_concurrency: ^0.3.0
+  bloc_test: ^10.0.0
+  build_runner: ^2.10.0
+  build_test: ^3.5.0
+  equatable: ^2.0.0
+  mono_bloc: ^1.0.7
+  test: ^1.28.0

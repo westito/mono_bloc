@@ -1,0 +1,9 @@
+targets:
+  $default:
+    builders:
+      mono_bloc_generator:mono_bloc_generator:
+        options:
+          # auto_detect: false (default) - Only @event annotated methods
+          # auto_detect: true - Also auto-detect methods starting with "_on" and error handlers by name
+          auto_detect: false
+

@@ -1,0 +1,30 @@
+name: mono_bloc_example
+description: Example demonstrating mono_bloc code generation with custom models and freezed
+
+repository: https://github.com/westito/mono_bloc
+
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  equatable: ^2.0.0
+  mono_bloc_flutter: ^1.0.7  # Exports flutter_bloc + mono_bloc
+  freezed_annotation: ^3.1.0
+  collection: ^1.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^2.10.0
+  freezed: ^3.2.0
+  flutter_lints: ^6.0.0
+  bloc_test: ^10.0.0
+  mono_bloc_generator: ^1.0.7
+
+flutter:
+  uses-material-design: true

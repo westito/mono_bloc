@@ -1,0 +1,6 @@
+.lh
+.DS_Store
+build
+.dart_tool
+.test_optimizer.dart
+.idea

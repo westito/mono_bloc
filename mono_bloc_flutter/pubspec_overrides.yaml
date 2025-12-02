@@ -1,0 +1,3 @@
+dependency_overrides:
+  mono_bloc:
+    path: ../mono_bloc

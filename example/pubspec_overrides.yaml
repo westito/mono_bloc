@@ -1,0 +1,7 @@
+dependency_overrides:
+  mono_bloc:
+    path: ../mono_bloc
+  mono_bloc_flutter:
+    path: ../mono_bloc_flutter
+  mono_bloc_generator:
+    path: ../mono_bloc_generator

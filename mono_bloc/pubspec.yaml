@@ -1,0 +1,25 @@
+name: mono_bloc
+description: Simplify Flutter Bloc with code generation. Define events as methods, get automatic concurrency control, actions for side effects, and async state management.
+
+repository: https://github.com/westito/mono_bloc
+
+topics:
+  - "bloc"
+  - "code-generation"
+  - "state-management"
+  - "dart"
+
+version: 1.0.7
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  meta: ^1.17.0
+  bloc: ^9.0.0
+  bloc_concurrency: ^0.3.0
+  stack_trace: ^1.12.0
+
+dev_dependencies:
+  equatable: ^2.0.0
+  test: ^1.28.0

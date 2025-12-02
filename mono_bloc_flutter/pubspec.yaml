@@ -1,0 +1,27 @@
+name: mono_bloc_flutter
+description: Flutter widgets and utilities for mono_bloc. Provides MonoBlocActionListener for handling side effects in Flutter apps.
+
+repository: https://github.com/westito/mono_bloc
+
+topics:
+  - "bloc"
+  - "flutter"
+  - "state-management"
+
+version: 1.0.7
+
+environment:
+  sdk: ^3.9.0
+  flutter: ">=3.24.0"
+
+dependencies:
+  bloc: ^9.0.0
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.0.0
+  meta: ^1.17.0
+  mono_bloc: ^1.0.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
